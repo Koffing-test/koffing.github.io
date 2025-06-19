@@ -61,7 +61,7 @@
 }
 
 // Получаем элемент с классом searchwindow
-const searchWindow = document.querySelector('searchwindow');
+const searchWindow = document.querySelector('.searchwindow');
 
 // Проверяем, найден ли элемент
 if (searchWindow) {
@@ -86,9 +86,10 @@ if (searchWindow) {
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <div>
 	<button onclick="#">поиск</button>
-	<form> <input class="searchWindow" type="text"><button type="submit">поиск</button></form>
+	<div class="searchWindow">
+	<form> <input  type="text"><button type="submit">поиск</button></form>
 		      <span>Иван Иванов </span>
-	      </div> 
+	      </div></div> 
 	</article>
 <img src="https://i.postimg.cc/YC99wmcd/JPEG.jpg">
     <hr>
