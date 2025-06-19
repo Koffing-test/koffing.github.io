@@ -109,9 +109,6 @@ if (searchWindow) {
   // Получаем текст из элемента как результат поиска
   const searchQuery = searchWindow.textContent;
   
-  // Пример результатов поиска (обычно они будут получены из какого-либо источника)
-  const searchResults = ['результат 1', 'результат 2', 'результат 3'];
-  
   // Отправляем результаты поиска в dataLayer
   sendSearchResultsToDataLayer(searchQuery, searchResults);
 } else {
