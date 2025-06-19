@@ -88,7 +88,8 @@
 <div class="projectname">Стандартные силиконовые кольца, соответствующие требованиям ГОСТ. Применяются в машиностроении, гидравлике, пневматике и других отраслях.
 </div>
 </div>
-<script>function sendSearchResultsToDataLayer(query, results) {
+<script>// Функция для отправки результатов поиска в window.dataLayer
+function sendSearchResultsToDataLayer(query, results) {
   // Создаём объект с данными о поиске
   const searchEvent = {
     event: 'search',
@@ -99,23 +100,27 @@
   // Добавляем объект в window.dataLayer
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push(searchEvent);
+  console.log('Данные отправлены в dataLayer:', searchEvent); // Отладочное сообщение
 }
 
-// Получаем элемент с классом searchwindow
-const searchWindow = document.querySelector('.searchwindow');
+// Ждём, пока документ полностью загрузится
+document.addEventListener('DOMContentLoaded', function() {
+  // Получаем элемент с классом searchwindow
+  const searchWindow = document.querySelector('.searchwindow');
 
-// Проверяем, найден ли элемент
-if (searchWindow) {
-  // Получаем текст из элемента как результат поиска
-  const searchQuery = searchWindow.textContent;
-  
-  // Пример результатов поиска (обычно они будут получены из какого-либо источника)
-  const searchResults = ['результат 1', 'результат 2', 'результат 3'];
-  
-  // Отправляем результаты поиска в dataLayer
-  sendSearchResultsToDataLayer(searchQuery, searchResults);
-} else {
-  console.log('Элемент с классом .searchwindow не найден');
-}</script>
+  // Проверяем, найден ли элемент
+  if (searchWindow) {
+    // Получаем текст из элемента как результат поиска
+    const searchQuery = searchWindow.textContent.trim(); // Убираем пробелы
+
+    // Пример результатов поиска (обычно они будут получены из какого-либо источника)
+    const searchResults = ['результат 1', 'результат 2', 'результат 3'];
+
+    // Отправляем результаты поиска в dataLayer
+    sendSearchResultsToDataLayer(searchQuery, searchResults);
+  } else {
+    console.log('Элемент с классом .searchwindow не найден');
+  }
+});</script>
 </body>
 </html>
