@@ -47,7 +47,35 @@
         ecommerce:"dataLayer"
    });
 </script>
-<script>const searchEvent = new Event('search');</script>
+<script>function sendSearchResultsToDataLayer(query, results) {
+  // Создаём объект с данными о поиске
+  const searchEvent = {
+    event: 'search',
+    query: query,
+    results: results
+  };
+
+  // Добавляем объект в window.dataLayer
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(searchEvent);
+}
+
+// Получаем элемент с классом searchwindow
+const searchWindow = document.querySelector('.searchwindow');
+
+// Проверяем, найден ли элемент
+if (searchWindow) {
+  // Получаем текст из элемента как результат поиска
+  const searchQuery = searchWindow.textContent;
+  
+  // Пример результатов поиска (обычно они будут получены из какого-либо источника)
+  const searchResults = ['результат 1', 'результат 2', 'результат 3'];
+  
+  // Отправляем результаты поиска в dataLayer
+  sendSearchResultsToDataLayer(searchQuery, searchResults);
+} else {
+  console.log('Элемент с классом .searchwindow не найден');
+}</script>
 <noscript><div><img src="https://mc.yandex.ru/watch/85156114" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
     <h1>Новости</h1>
@@ -57,7 +85,8 @@
         <p><strong>Описание:</strong> Краткое описание первой новостной статьи.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <div>
-	<button onclick="document.dispatchEvent(searchEvent);">поиск</button>
+	<button onclick="#">поиск</button>
+	<form> <input class="searchWindow" type="text"><button type="submit">поиск</button></form>
 		      <span>Иван Иванов </span>
 	      </div> 
 	</article>
