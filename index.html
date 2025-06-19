@@ -121,6 +121,24 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     console.log('Элемент с классом .searchwindow не найден');
   }
-});</script>
+});
+</script>
+<script>
+    const searchValue = (function () {
+        const value = null;
+        try {
+            for (const i = 0; i < window.dataLayer.length; i++) {
+                if (window.dataLayer[i].event === 'searchEvent') {
+                    value = window.dataLayer[i].query;
+                    break;
+                }
+            }
+        } catch (e) {}
+    
+        return value;
+    })();  
+    searchValue && ym(23612914, 'reachGoal', 'search', {search_term: searchValue});
+
+</script>
 </body>
 </html>
