@@ -47,35 +47,7 @@
         ecommerce:"dataLayer"
    });
 </script>
-<script>function sendSearchResultsToDataLayer(query, results) {
-  // Создаём объект с данными о поиске
-  const searchEvent = {
-    event: 'search',
-    query: query,
-    results: results
-  };
 
-  // Добавляем объект в window.dataLayer
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push(searchEvent);
-}
-
-// Получаем элемент с классом searchwindow
-const searchWindow = document.querySelector('.searchwindow');
-
-// Проверяем, найден ли элемент
-if (searchWindow) {
-  // Получаем текст из элемента как результат поиска
-  const searchQuery = searchWindow.textContent;
-  
-  // Пример результатов поиска (обычно они будут получены из какого-либо источника)
-  const searchResults = ['результат 1', 'результат 2', 'результат 3'];
-  
-  // Отправляем результаты поиска в dataLayer
-  sendSearchResultsToDataLayer(searchQuery, searchResults);
-} else {
-  console.log('Элемент с классом .searchwindow не найден');
-}</script>
 <noscript><div><img src="https://mc.yandex.ru/watch/85156114" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
     <h1>Новости</h1>
@@ -116,5 +88,34 @@ if (searchWindow) {
 <div class="projectname">Стандартные силиконовые кольца, соответствующие требованиям ГОСТ. Применяются в машиностроении, гидравлике, пневматике и других отраслях.
 </div>
 </div>
+<script>function sendSearchResultsToDataLayer(query, results) {
+  // Создаём объект с данными о поиске
+  const searchEvent = {
+    event: 'search',
+    query: query,
+    results: results
+  };
+
+  // Добавляем объект в window.dataLayer
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(searchEvent);
+}
+
+// Получаем элемент с классом searchwindow
+const searchWindow = document.querySelector('.searchwindow');
+
+// Проверяем, найден ли элемент
+if (searchWindow) {
+  // Получаем текст из элемента как результат поиска
+  const searchQuery = searchWindow.textContent;
+  
+  // Пример результатов поиска (обычно они будут получены из какого-либо источника)
+  const searchResults = ['результат 1', 'результат 2', 'результат 3'];
+  
+  // Отправляем результаты поиска в dataLayer
+  sendSearchResultsToDataLayer(searchQuery, searchResults);
+} else {
+  console.log('Элемент с классом .searchwindow не найден');
+}</script>
 </body>
 </html>
