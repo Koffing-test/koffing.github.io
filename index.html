@@ -69,8 +69,7 @@ ymab('metrika.99961125', 'init'/*, {clientFeatures}, {callback}*/);
         var event_2;
 
         function setValue() {
-            event_2 = 'test123';
-            console.log(event_2); // Для проверки значения переменной
+            dataLayer.push({event_2 = 'test123'});
         }
 
         document.getElementById('myButton').onclick = setValue;
