@@ -69,7 +69,8 @@ ymab('metrika.99961125', 'init'/*, {clientFeatures}, {callback}*/);
         var event_2;
 
         function setValue() {
-            dataLayer.push({event_2:'test123'});
+			event_2 = 'test123';
+            dataLayer.push(({ event: 'event_2', value: event_2 });
 			console.log(dataLayer)
         }
 
