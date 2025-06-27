@@ -65,7 +65,16 @@ ymab('metrika.99961125', 'init'/*, {clientFeatures}, {callback}*/);
 
     <article>
 	<div id="fines_export_bank">
-<a href="https://ya.ru/test" target="_blank" onclick="ym(99961125, 'params', {params_lvl_1:{event_2:'test123'}})">
+<a href="https://ya.ru/test" target="_blank" onclick="ym(99961125, 'params', {params_lvl_1:{event_2:'test123'}})">    <script>
+        var event_2;
+
+        function setValue() {
+            event_2 = 'test123';
+            console.log(event_2); // Для проверки значения переменной
+        }
+
+        document.getElementById('myButton').onclick = setValue;
+    </script>
          Клик по кнопке event_2
 </a>	</div>
 	<div id="fines_export_bank">
