@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Отправляем результаты поиска в dataLayer с задержкой в 40 секунд
     setTimeout(() => {
       sendSearchResultsToDataLayer(searchQuery, searchResults);
-    }, 40000);
+    }, 4000);
   } else {
     console.log('Элемент с классом .searchwindow не найден');
   }
@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 setTimeout(() => {
   searchValue && ym(23612914, 'reachGoal', 'search', {search_term: searchValue});
-}, 40000);
+}, 4000);
 
 
 </script>
