@@ -181,12 +181,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Пример результатов поиска (обычно они будут получены из какого-либо источника)
     const searchResults = ['результат 1', 'результат 2', 'результат 3'];
 
-    // Отправляем результаты поиска в dataLayer
-    setTimeout(() => {sendSearchResultsToDataLayer(searchQuery, searchResults);
-  }, 40000); else {
+    // Отправляем результаты поиска в dataLayer с задержкой в 40 секунд
+    setTimeout(() => {
+      sendSearchResultsToDataLayer(searchQuery, searchResults);
+    }, 40000);
+  } else {
     console.log('Элемент с классом .searchwindow не найден');
   }
-
 });
 </script>
 <script>
