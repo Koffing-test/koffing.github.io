@@ -217,8 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (descriptionElement) {
     descriptionElement.addEventListener('click', function() {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: 'search' });
+	dataLayer.push({ event: 'search' });
       console.log('Событие "search" отправлено в dataLayer');
     });
   } else {
