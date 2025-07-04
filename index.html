@@ -190,19 +190,23 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <script>
     const searchValue = (function () {
-        const value = null;
-        try {
-            for (const i = 0; i < window.dataLayer.length; i++) {
-                if (window.dataLayer[i].event === 'searchEvent') {
-                    value = window.dataLayer[i].query;
-                    break;
-                }
-            }
-        } catch (e) {}
-    
-        return value;
-    })();  
-    searchValue && ym(23612914, 'reachGoal', 'search', {search_term: searchValue});
+  const value = null;
+  try {
+    for (const i = 0; i < window.dataLayer.length; i++) {
+      if (window.dataLayer[i].event === 'searchEvent') {
+        value = window.dataLayer[i].query;
+        break;
+      }
+    }
+  } catch (e) {}
+
+  return value;
+})();
+
+setTimeout(() => {
+  searchValue && ym(23612914, 'reachGoal', 'search', {search_term: searchValue});
+}, 4000);
+
 
 </script>
 
