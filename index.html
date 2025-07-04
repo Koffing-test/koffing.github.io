@@ -182,10 +182,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchResults = ['результат 1', 'результат 2', 'результат 3'];
 
     // Отправляем результаты поиска в dataLayer
-    sendSearchResultsToDataLayer(searchQuery, searchResults);
+    setTimeout(() => {sendSearchResultsToDataLayer(searchQuery, searchResults);
   } else {
     console.log('Элемент с классом .searchwindow не найден');
   }
+}, 40000);
 });
 </script>
 <script>
